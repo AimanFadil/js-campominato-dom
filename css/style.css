@@ -38,5 +38,9 @@ body{
 }
 
 .evidenziato{
-    background-color: rgb(0, 140, 255);
+    background-color: rgb(240, 240, 240);
+}
+
+.evidenziato_rosso{
+    background-color: rgb(255, 0, 43)
 }
