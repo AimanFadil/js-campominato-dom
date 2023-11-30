@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="content my-2">
+                        <h1 >CAMPO MINATO</h1>
+                    </div>
+                </div>    
+                <div class="col-12">
+                    <div class="content">
+                        <h5 class="">Premi il pulsante per giocare</h5>  
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="content my-5">
+                        <select name="difficoltà" id="difficoltà" class="select-control">
+                            <option value="">Seleziona il livello di difficoltà</option>
+                            <option value="1">Facile</option>
+                            <option value="2">Medio</option>
+                            <option value="3">difficile</option>
+                        </select>
+                        <button id="gioca" class="btn btn-success">Gioca</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="content">
+                        <div id="griglia"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script type="text/javascript" src="./js/script.js"></script>
+</body>
+</html>
