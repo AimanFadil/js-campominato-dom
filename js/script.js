@@ -44,7 +44,6 @@ function CreaNuovoGioco(){
     let punti = 0
     
     
-    
     for(let i=1; i<=100; i++){
         let cella = creaCella(i);
 
@@ -65,12 +64,7 @@ function CreaNuovoGioco(){
         griglia.appendChild(cella);
     }
 
-    NumCellePerRiga = Math.sqrt(numeroCelle);
-    
-
-    griglia.innerHTML = '';
-    CreaGriglia(numeroCelle, NumCellePerRiga);
-
+   
     
     console.log(bombe);
 }
