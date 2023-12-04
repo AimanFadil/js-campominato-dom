@@ -30,15 +30,15 @@ body{
 }
 
 #griglia{
-   
-    
-    
+    width: 1000px;
+    height: 1000px;
+    display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
 
 .evidenziato{
-    background-color: rgb(240, 240, 240);
+    background-color: rgb(255, 255, 255);
 }
 
 .evidenziato_rosso{

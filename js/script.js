@@ -24,28 +24,23 @@ function generaBombe(NumBombe){
     return bombe;
 }
 
-function creaCella(num){
-    const quadrato = document.createElement('div');
+function creaCella(num, RigaCelle){
+    const quadrato = document.createElement('div')
     quadrato.classList.add('quadrato')
-
+    quadrato.style.width = `calc(100% /${RigaCelle})`
     quadrato.innerText = num;
-
-    return quadrato 
+    return quadrato;
 }
 
-function CreaNuovoGioco(){
-    const griglia = document.getElementById('griglia');
-    
-    const NumBombe = 16 ;
-    
-    griglia.innerHTML = ''
-    const bombe = generaBombe(NumBombe);
-    
+function CreaGriglia(numeroCelle, RigaCelle, bombe){
+    const griglia = document.getElementById('griglia')
+    griglia.innerHTML = '';
+
+
     let punti = 0
-    
-    
-    for(let i=1; i<=100; i++){
-        let cella = creaCella(i);
+
+    for(let i=1; i<=numeroCelle; i++){
+        let cella = creaCella(i, RigaCelle);
 
         cella.addEventListener('click', function(){
             if(!bombe.includes(i)){
@@ -60,16 +55,45 @@ function CreaNuovoGioco(){
                 this.classList.add('evidenziato_rosso');
             }
         })
-        
+
         griglia.appendChild(cella);
     }
-
-   
-    
-    console.log(bombe);
 }
 
-const button = document.getElementById('gioca');
-button.addEventListener('click', function(){
-    CreaNuovoGioco();
-}) 
+function creaNuovoGioco(){
+    const griglia = document.getElementById('griglia')
+
+    const difficoltà = document.getElementById('difficoltà')
+    let livello = parseInt(difficoltà.value);
+
+    let numeroCelle;
+    let NumCellePerRiga;
+
+    switch(livello){
+        case 1:
+            numeroCelle = 100;
+            break;
+        case 2:
+            numeroCelle = 81;
+            break;
+        case 3:
+            numeroCelle = 49;
+            break;
+        default:
+            break;
+    }
+
+    NumCellePerRiga = Math.sqrt(numeroCelle);
+    //moltiplicare riga per riga
+
+    const bombe = generaBombe(16); 
+
+    CreaGriglia(numeroCelle, NumCellePerRiga, bombe);
+}
+
+const bottoneGioco = document.getElementById('gioca')
+
+bottoneGioco.addEventListener('click', function(){
+    creaNuovoGioco();
+}); 
+
